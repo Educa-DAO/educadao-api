@@ -11,6 +11,14 @@ const client = new NFTStorage({
     'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweEIzRUIyMDZiQUMyQ0NEMzNBNERiMTkwRThhODMxQkU5NmNEMjU1M2YiLCJpc3MiOiJuZnQtc3RvcmFnZSIsImlhdCI6MTY2Mjg1ODIzNjAwOCwibmFtZSI6IkhhY2thdG9uU1AifQ.Pi8t9LXFP4jwu5cuNA1nMF3Gd8Fye33273_5JnSPp5Y',
 });
 
+app.get('/', jsonParser, async (req, res) => {
+  try {
+    res.send('Hello EducaDAO');
+  } catch (error) {
+    console.log(error);
+  }
+});
+
 app.post('/certificate', jsonParser, async (req, res) => {
   try {
     const { name: nameReq, description: descriptionReq } = req.body;
